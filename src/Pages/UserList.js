@@ -1,11 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const UserList = ({ users }) => {
+  const navigate = useNavigate();
   return (
     <div>
       <button>Add User</button>
       {users.map((user) => (
-        <li key={user.id}>{user.username}</li>
+        <li key={user.id} onClick={() => navigate(`/user/${user.id}`)}>
+          {user.username}
+        </li>
       ))}
     </div>
   );

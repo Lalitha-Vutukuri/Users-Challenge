@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import UserList from "./Pages/UserList";
 import { initialUsers } from "./Pages/Users";
+import UserDetails from "./Pages/UserDetails";
 
 function App() {
   const [users, setUsers] = useState(initialUsers);
@@ -10,6 +11,10 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<UserList users={users} />}></Route>
+        <Route
+          path="/user/:id"
+          element={<UserDetails users={users} setUsers={setUsers} />}
+        ></Route>
       </Routes>
     </BrowserRouter>
   );
