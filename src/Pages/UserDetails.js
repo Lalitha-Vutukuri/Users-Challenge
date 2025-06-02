@@ -3,8 +3,10 @@ import { useParams } from "react-router-dom";
 
 function UserDetails({ users }) {
   const { id } = useParams();
-  const clickedUser = users.filter((user) => user.id == id)[0];
-  console.log(clickedUser.username);
+  console.log(id);
+  console.log(users);
+  const clickedUser = users[id];
+  console.log(clickedUser);
   return (
     <div>
       <p>Name : {clickedUser.name}</p>
